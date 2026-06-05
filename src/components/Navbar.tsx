@@ -35,7 +35,7 @@ function Navbar({ active }: ComponentProps) {
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
     };
-    
+
     const getMenuItemStyle = (pageId: string) => ({
         backgroundColor: active === pageId ? '#1976d2' : 'transparent',
         '&:hover': {
@@ -73,6 +73,11 @@ function Navbar({ active }: ComponentProps) {
                                 Диаграммы
                             </Button>
                         </Link>
+                        <Link to="/test" style={{ textDecoration: 'none' }}>
+                            <Button variant={active === "4" ? "contained" : "text"} color="info">
+                                Проверь себя
+                            </Button>
+                        </Link>
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
@@ -108,6 +113,11 @@ function Navbar({ active }: ComponentProps) {
                                     <MenuItem onClick={toggleDrawer(false)} sx={getMenuItemStyle("3")}>
                                         Диаграммы
                                     </MenuItem>
+                                </Link>
+                                <Link to="/test" style={{ textDecoration: 'none' }}>
+                                    <Button variant={active === "4" ? "contained" : "text"} color="info">
+                                        Проверь себя
+                                    </Button>
                                 </Link>
                             </MenuList>
                         </Drawer>
